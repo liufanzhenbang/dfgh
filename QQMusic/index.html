@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>珠峰培训-QQ音乐播放器</title>
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/prefixfree.min.js" async></script>
+    <script>
+        (function() {
+            const computed = function computed() {
+                let HTML = document.documentElement;
+                let curW = HTML.clientWidth;
+                desW = 750;
+                if (curW >= desW) {
+                    HTML.style.fontSize = `100px`;
+                    return
+                }
+                HTML.style.fontSize = `${curW/(desW/100)}px`;
+            }
+            computed();
+            window.addEventListener("resize", computed); //横竖屏切换
+
+            // 切换为横屏的提示
+            window.addEventListener('orientationchange', function() {
+                // console.log(window.orientation);
+                let rotate = Math.abs(this.window.orientation);
+                if (rotate === 90) {
+                    // 横屏
+                    alert('横屏体验不佳，请您切换竖屏')
+                    return;
+                }
+
+            })
+        })()
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header_box">
+            <div class="info">
+                <img class="cover" src="./images/myDream.jpg" alt="">
+                <div class="text">
+                    <h2 class="title">《奇迹再现》-迪迦奥特曼主题曲</h2>
+                    <h3 class="author">毛华锋</h3>
+                </div>
+            </div>
+            <a href="javascript:;" class="music_btn">
+
+            </a>
+        </header>
+        <main class="main_box">
+            <div class="wrapper">
+                <!-- <p>我的梦 (华为手机主题曲) - 张靓颖</p>
+                <p>词：王海涛/张靓颖</p>
+                <p>曲：Andy Love</p>
+                <p>编曲：崔迪</p>
+                <p>一直地一直地往前走</p>
+                <p>疯狂的世界</p>
+                <p>一直地一直地往前走</p>
+                <p>疯狂的世界</p>
+                <p>一直地一直地往前走</p>
+                <p>疯狂的世界</p>
+                <p>一直地一直地往前走</p>
+                <p>疯狂的世界</p>
+                <p>一直地一直地往前走</p>
+                <p>疯狂的世界</p> -->
+
+            </div>
+        </main>
+        <footer class="footer_box">
+            <div class="progress">
+                <span class="cur_time">00:00</span>
+                <div class="pro_bg">
+                    <div class="prog_cur">
+
+                    </div>
+                </div>
+                <span class="total_time">00:00</span>
+            </div>
+            <a href="javescropt:;" class="download">下载这首音乐</a>
+        </footer>
+
+        <div class="bg_img">
+        </div>
+        <div class="bg_mark">
+        </div>
+        <audio src="images/like.m4a" preload="none" class="myAudio"></audio>
+    </div>
+
+    <script src="./js/fastclick.js" defer></script>
+    <script src="./js/subscribe.js" defer></script>
+    <script src="./js/index.js" defer></script>
+</body>
+
+</html>
